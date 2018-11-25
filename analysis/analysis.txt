@@ -1,0 +1,22 @@
+Your name
+Your netid
+
+Copy/Paste results from PercolationStats using PercolationDFS
+
+
+Copy/Paste results from PercolationStats using PercolationDFSFast
+
+
+Copy/Paste results from PercolationStats using PercolationBFS
+
+
+Copy/Paste results from PercolationStats using PercolationUF 
+with the QuickUWPC UnionFind implementation.
+
+1. How does doubling the grid size affect running time (keeping # trials fixed)
+
+
+2. How does doubling the number of trials affect running time.
+
+
+3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.

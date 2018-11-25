@@ -4,12 +4,12 @@ import org.junit.Test;
 public class TestUFPercolation {
 	
 	public IPercolate getPercolator(int size) {
-		IUnionFind finder = new QuickFind();
+		IUnionFind finder = new QuickUWPC();
 		//IPercolate perc = new PercolationUF(finder,size);
 		//return perc;
 		return null;
 	}
-	
+		
 	/**
 	 * This test checks if PercolationUF's isOpen method works correctly
 	 */
