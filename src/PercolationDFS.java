@@ -80,6 +80,9 @@ public class PercolationDFS implements IPercolate {
 		for (int k = 0; k < myGrid[0].length; k++)
 			dfs(0, k);
 	}
+	
+	
+	
 
 	public boolean percolates() {
 		for (int col = 0; col < myGrid[myGrid.length - 1].length; col++)
@@ -126,6 +129,26 @@ public class PercolationDFS implements IPercolate {
 		if (row < 0 || row >= myGrid.length) return false;
 		if (col < 0 || col >= myGrid[0].length) return false;
 		return true;
+	}
+	
+	public class PercolationDFSFast extends PercolationDFS {
+		
+		public PercolationDFSFast(int size) {
+			super(size);
+		}
+		@Override
+		protected void updateOnOpen(int row, int col) {
+			
+			for (int k = 0; k < myGrid[0].length; k++) {
+				if(isFull(0,k))dfs(0, k);
+				if(isFull(row+1, k-1)) dfs(row,col);
+				if(isFull(row-1, k-1)) dfs(row,col);
+				if(isFull(row-1, k+1)) dfs(row,col);
+				if(isFull(row+1, k+1)) dfs(row,col);
+				
+				
+			}
+		}
 	}
 
 }
