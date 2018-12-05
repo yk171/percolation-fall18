@@ -6,14 +6,13 @@ public class PercolationDFSFast extends PercolationDFS {
 		}
 		@Override
 		protected void updateOnOpen(int row, int col) {
-			
-			for (int k = 0; k < myGrid[0].length; k++) {
-				if(isFull(0,k)) dfs(0, k);
+			if(row == 0) dfs(row,col);
+			else {
+			if((row < myGrid[0].length) && isFull(row+1, col)) dfs(row,col);
+			if(isFull(row-1, col)) dfs(row,col);
+			if((col < myGrid.length) && isFull(row, col+1)) dfs(row,col);
+			if(isFull(row, col-1) && col != 0) dfs(row,col);
 			}
-			
-				if(isFull(row+1, col)) dfs(row,col);
-				if(isFull(row-1, col)) dfs(row,col);
-				if(isFull(row, col+1)) dfs(row,col);
-				if(isFull(row, col-1)) dfs(row,col);
+				
 		}
 	}
