@@ -21,7 +21,7 @@ public class PercolationBFS extends PercolationDFSFast{
 		qp.add(a);
 		
 		while(qp.size() != 0) {
-			
+			Integer p = qp.remove();
 			for(int i = 0; i < rowDelta.length; i++) {
 				row = a/size + rowDelta[i];
 				col = a%size + colDelta[i];
