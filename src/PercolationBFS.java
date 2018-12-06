@@ -9,7 +9,7 @@ public class PercolationBFS extends PercolationDFSFast{
 		int size = myGrid.length;
 		int[] rowDelta = {-1,1,0,0};
 	    int[] colDelta = {0,0,-1,1};
-	    
+	  
 	    Integer a = row*size + col;	
 	    
 		if(! inBounds(row,col)) return;
