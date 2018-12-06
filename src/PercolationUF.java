@@ -11,7 +11,7 @@ public class PercolationUF implements IPercolate{
 		VTOP = size*size;
 		VBOTTOM = size*size + 1;
 		int myOpenCount;
-		IUnionFind a = finder;
+		myFinder = finder;
 		finder.initialize(size*size+2);
 	}
 	@Override
