@@ -55,8 +55,7 @@ public class PercolationUF implements IPercolate{
 		}
 		int size = myGrid.length;
 		int num = row*size + col;
-		if(myFinder.connected(num,VTOP)) return true; 
-		else return false;
+		return myFinder.connected(num,VTOP);
 	}
 
 	@Override
