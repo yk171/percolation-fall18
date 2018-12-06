@@ -27,8 +27,8 @@ public class PercolationBFS extends PercolationDFSFast{
 				col = p%size + colDelta[i];
 				if(inBounds(row, col) && myGrid[row][col] != FULL && myGrid[row][col] == OPEN) {
 						myGrid[row][col] = FULL;
-						qp.add(a);
-						size++;
+						qp.add(row*size + col);
+						
 				}
 			}
 		}
