@@ -46,7 +46,7 @@ public class PercolationUF implements IPercolate{
 	@Override
 	public boolean isOpen(int row, int col) {
 		if(! inBounds(row, col)) {
-			throw new IndexOutOfBoundsException(row + col + " is out of bounds!");
+			throw new IndexOutOfBoundsException(row + " " + col + " is out of bounds!");
 		}
 		return myGrid[row][col];
 	}
