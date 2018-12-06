@@ -10,7 +10,7 @@ public class PercolationUF implements IPercolate{
 		myGrid = new boolean[size][size];
 		VTOP = size*size;
 		VBOTTOM = size*size + 1;
-		int myOpenCount;
+		int myOpenCount = 0;
 		myFinder = finder;
 		finder.initialize(size*size+2);
 	}
@@ -20,21 +20,19 @@ public class PercolationUF implements IPercolate{
 			throw new IndexOutOfBoundsException("Out of Bounds");	
 		}
 		if(!isOpen(row,col)) {
+			int a = row*myGrid.length + col;
 			myGrid[row][col] = true;
+			myOpenCount++;
 			if(inBounds(row+1,col) && isOpen(row+1,col)) {
-				int a = row*myGrid.length + col;
 				myFinder.connected(a,(row+1)*myGrid.length + col);
 			}
 			if(inBounds(row-1,col) && isOpen(row-1,col)) {
-				int a = row*myGrid.length + col;
 				myFinder.connected(a,(row-1)*myGrid.length + col);
 			}
 			if(inBounds(row,col+1) && isOpen(row,col+1)) {
-				int a = row*myGrid.length + col;
 				myFinder.connected(a,(row)*myGrid.length + col+1);
 			}
 			if(inBounds(row,col-1) && isOpen(row+1,col-1)) {
-				int a = row*myGrid.length + col;
 				myFinder.connected(a,(row)*myGrid.length + col-1);
 			}
 		}
