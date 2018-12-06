@@ -17,7 +17,7 @@ public class PercolationUF implements IPercolate{
 	@Override
 	public void open(int row, int col) {
 		if(! inBounds(row, col)) {
-			throw new IndexOutOfBoundsException("Out of Bounds");	
+			throw new IndexOutOfBoundsException(row + col + " is out of bounds!");	
 		}
 		if(!isOpen(row,col)) {
 			int a = row*myGrid.length + col;
@@ -41,7 +41,7 @@ public class PercolationUF implements IPercolate{
 	@Override
 	public boolean isOpen(int row, int col) {
 		if(! inBounds(row, col)) {
-			throw new IndexOutOfBoundsException("Out of Bounds");
+			throw new IndexOutOfBoundsException(row + col + " is out of bounds!");
 		}
 		return myGrid[row][col];
 	}
@@ -49,7 +49,7 @@ public class PercolationUF implements IPercolate{
 	@Override
 	public boolean isFull(int row, int col) {
 		if(! inBounds(row, col)) {
-			throw new IndexOutOfBoundsException("Out of Bounds");
+			throw new IndexOutOfBoundsException(row + col + " is out of bounds!");
 		}
 		int size = myGrid.length;
 		int num = row*size + col;
