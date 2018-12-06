@@ -10,7 +10,7 @@ public class PercolationBFS extends PercolationDFSFast{
 		int[] rowDelta = {-1,1,0,0};
 	    int[] colDelta = {0,0,-1,1};
 	    
-	    Integer a = row*myGrid.length + col;	
+	    Integer a = row*size + col;	
 	    
 		if(! inBounds(row,col)) return;
 		
@@ -18,14 +18,13 @@ public class PercolationBFS extends PercolationDFSFast{
 		Queue<Integer> qp = new LinkedList<>();
 		myGrid[row][col] = FULL;
 		size++;
-		
 		qp.add(a);
 		
 		while(qp.size() != 0) {
-			Integer p = qp.remove();
+			
 			for(int i = 0; i < rowDelta.length; i++) {
-				row = p/size + rowDelta[i];
-				col = p%size + colDelta[i];
+				row = a/size + rowDelta[i];
+				col = a%size + colDelta[i];
 				if(inBounds(row, col) && myGrid[row][col] == FULL && myGrid[row][col] == OPEN) {
 						qp.add(a);
 						myGrid[row][col] = FULL;
