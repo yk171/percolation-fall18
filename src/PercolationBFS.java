@@ -13,18 +13,18 @@ public class PercolationBFS extends PercolationDFSFast{
 	    Integer a = row*size + col;	
 	    
 		if(! inBounds(row,col)) return;
-		
+
 	        
 		Queue<Integer> qp = new LinkedList<>();
 		myGrid[row][col] = FULL;
-		size++;
+		
 		qp.add(a);
 		while(qp.size() != 0) {
 			Integer p = qp.remove();
 			for(int i = 0; i < rowDelta.length; i++) {
 				row = p/size + rowDelta[i];
 				col = p%size + colDelta[i];
-				if(inBounds(row, col) && myGrid[row][col] != FULL && myGrid[row][col] == OPEN) {						
+				if(inBounds(row, col) && myGrid[row][col] != FULL && myGrid[row][col] != OPEN) {						
 						myGrid[row][col] = FULL;
 						qp.add(row*size + col);
 						
