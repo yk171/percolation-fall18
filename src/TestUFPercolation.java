@@ -5,7 +5,7 @@ public class TestUFPercolation {
 	
 	public IPercolate getPercolator(int size) {
 		IUnionFind finder = new QuickUWPC();
-		IPercolate perc = new PercolationUF(finder,size);
+		IPercolate perc = new PercolationUF(size,finder);
 		return perc;
 		//return null;
 	}
@@ -31,10 +31,10 @@ public class TestUFPercolation {
 		IPercolate uf = getPercolator(10);
 		for (int i = 0; i < 10; i++)
 			for (int j = 0; j < 10; j++) {
-				System.out.println("Testprint " + i +" " + j);
-				System.out.println(uf == null);
+				
+				
 				uf.open(i, j);
-				System.out.println("Testprint " + i +" " + j);
+				
 				assertTrue("This test checks if PercolationUF's isFull method " + "works correctly", uf.isFull(i, j));
 			}
 	}

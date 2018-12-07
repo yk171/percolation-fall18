@@ -15,11 +15,11 @@ public class PercolationUF implements IPercolate{
 	}
 	@Override
 	public void open(int row, int col) {
-		System.out.println("Testprint ");
+		
 		if(! inBounds(row, col)) {
 			throw new IndexOutOfBoundsException(row + col + " is out of bounds!");	
 		}
-		System.out.println(row +" " + col);
+		
 		if(!isOpen(row,col)) {
 			int a = row*myGrid.length + col;
 			myGrid[row][col] = true;
@@ -74,7 +74,7 @@ public class PercolationUF implements IPercolate{
 	}
 	
 	protected boolean inBounds(int row, int col) {
-		System.out.println("Testprint " + row + " " + col);
+		
 		if (row < 0 || row >= myGrid.length) return false;
 		if (col < 0 || col >= myGrid[0].length) return false;
 		return true;
