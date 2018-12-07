@@ -1,22 +1,58 @@
-Your name
-Your netid
+Eugene Kim
+yk171
 
 Copy/Paste results from PercolationStats using PercolationDFS
+simulation data for 20 trials
+grid	mean		stddev	time
+100	0.593		0.014		0.142
+200	0.591		0.010		0.150
+400	0.590		0.006		0.958
+800	0.594		0.004		5.925
+1600	0.592		0.002		39.266
+3200	0.593		0.001		183.074
+
 
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
-
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.149
+200	0.591	0.010	0.180
+400	0.590	0.006	1.258
+800	0.594	0.004	9.079
 
 Copy/Paste results from PercolationStats using PercolationBFS
-
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.112
+200	0.591	0.010	0.175
+400	0.590	0.006	0.925
+800	0.594	0.004	6.363
+1600	0.592	0.002	39.249
+3200	0.593	0.001	246.772
 
 Copy/Paste results from PercolationStats using PercolationUF 
 with the QuickUWPC UnionFind implementation.
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.087
+200	0.591	0.010	0.129
+400	0.590	0.006	0.775
+800	0.594	0.004	4.773
+1600	0.592	0.002	24.048
+3200	0.593	0.001	124.970
 
 1. How does doubling the grid size affect running time (keeping # trials fixed)
-
+When the grid size is doubled, the run time is affected because the size of the grid is increased by two. 
+When the size of the grid is increased by two, it affects the size of the grid exponentially. This causes exponentially more
+amounts of cells it will need to check if its open or closed or full.
 
 2. How does doubling the number of trials affect running time.
+WHen the number of trials is doubled, the running time is longer.
 
-
-3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning. When you change the size of the grid
+you will change the run time exponentially because adding 1 to the size of the grid adds 1 more row or 1 more column. So if you were 
+to run a the largest grid size in 24 hours with 20 trials, based on the results for PercolationUF, the grid size increased by a rate of two,
+and the run time increased exponentially. if it took two minutes for a grid of 3200, then for 24 hours, with an exponential increase, 
+the largest grid size would massive. If you were to plug in the run time in a graph, where y is the runtime and x is the gridsize, 24 hours is
+== to 86400 seconds. If you looked on a x^2 graph where y is 86400, x is 293. So maybe around 300~
