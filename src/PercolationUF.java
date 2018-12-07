@@ -29,16 +29,16 @@ public class PercolationUF implements IPercolate{
 				myFinder.union(a, VBOTTOM);
 			}
 			if(inBounds(row+1,col) && isOpen(row+1,col)) {
-				myFinder.connected(a,(row+1)*myGrid.length + col);
+				myFinder.union(a,(row+1)*myGrid.length + col);
 			}
 			if(inBounds(row-1,col) && isOpen(row-1,col)) {
-				myFinder.connected(a,(row-1)*myGrid.length + col);
+				myFinder.union(a,(row-1)*myGrid.length + col);
 			}
 			if(inBounds(row,col+1) && isOpen(row,col+1)) {
-				myFinder.connected(a,(row)*myGrid.length + col+1);
+				myFinder.union(a,(row)*myGrid.length + col+1);
 			}
 			if(inBounds(row,col-1) && isOpen(row+1,col-1)) {
-				myFinder.connected(a,(row)*myGrid.length + col-1);
+				myFinder.union(a,(row)*myGrid.length + col-1);
 			}
 		}
 	}
